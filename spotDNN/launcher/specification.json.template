@@ -1,0 +1,7 @@
+{
+  "ImageId": "%s",
+  "KeyName":"tf-faye",
+  "SecurityGroupIds": [ "%s" ],
+  "InstanceType": "%s",
+  "SubnetId": "%s"
+}
