@@ -7,6 +7,7 @@ from profiler import instanceinfo
 image_id = instanceinfo.image_id
 subnet_id = instanceinfo.subnet_id
 SecurityGroupIds = instanceinfo.SecurityGroupIds
+key = instanceinfo.key
 
 def getSpotInstance(instance_type, count):
     instance_id = ""
@@ -21,7 +22,7 @@ def getSpotInstance(instance_type, count):
     for i in range(len(instance_type)):
         with open("launcher/specification.json.template", 'r') as f1, open("launcher/instanceSpec.json", 'w') as f2:
             template = f1.read()
-            specification_file = template % (image_id, SecurityGroupIds, instance_type[i], subnet_id)
+            specification_file = template % (image_id, key, SecurityGroupIds, instance_type[i], subnet_id)
             f2.write(specification_file)
             
         if count[i] == 0:
@@ -98,10 +99,10 @@ def getSpotInstance(instance_type, count):
             f.write(item +' ')
         f.write('\n')
         for item in hosts[2]:
-            f.write(item +' ')
+            f.write(str(item) +' ')
         f.write('\n')
         for item in hosts[3]:
-            f.write(item +' ')
+            f.write(str(item) +' ')
         f.write('\n')
         f.write(instance_id)
     

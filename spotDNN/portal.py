@@ -3,6 +3,7 @@ import subprocess
 import provisioner
 from profiler import instanceinfo
 from launcher import launcher
+import run
 import time
 import datetime
 # performance profiler
@@ -20,8 +21,7 @@ hosts = launcher.getSpotInstance(instance_type, instance_count)
 instanceinfo.starttimestamp = datetime.datetime.now()
 instanceinfo.objtimestamp = instanceinfo.starttimestamp + objtime
 
-train_cmd = """sh run.sh %s""" %(targetimages)
-subprocess.check_output(train_cmd, shell=True).decode()
+run.run(instanceinfo.file, targetimages)
 
 # detector
 detector_cmd = """sh detector.sh"""

@@ -1,5 +1,5 @@
 import numpy as np
-
+file = './cifar_resnet_tf1/resnet_ASP_img.py'
 # Part 1 - get from AWS websites
 instance_type=['p2.xlarge','g4dn.4xlarge','g3.8xlarge','g3.16xlarge','p2.8xlarge']
 instance_gpus=[1,1,2,4,8]
