@@ -2,8 +2,6 @@
 # public ip
 line=$(cat launcher/instancesInfo.txt | head -n 1)
 hosts=($line)
-line=$(cat launcher/instancesInfo.txt | tail -n +4 | head -n 1)
-hosts_type=($line)
 tokens=()
 for host in "${hosts[@]}"
     do
@@ -27,10 +25,8 @@ while sleep 10; do
             freshtoken=$(ssh -i tf-faye.pem ubuntu@${host} ${gettokencmd})
             tokens[i]=freshtoken
         elif [[ "$httpcode" -eq 200 ]] ; then
-            # Revocation Detected...
-            echo "run predictor" 
-            # get all loss logs and fit the loss function -> loss objectives
-            # get time for now -> remaining time
+            echo "Revocation Detected..." 
+            python recover.py --host_index=$i
         else
             echo 'Not Interrupted'
         fi

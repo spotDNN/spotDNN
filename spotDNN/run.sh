@@ -82,7 +82,7 @@ func_train()
         do
             host=${hosts[$index]}
             echo "host: ${host} start ${task[$i]}"   
-            tmp=" python ./cifar_resnet_tf1/${file} \
+            command=" python ./cifar_resnet_tf1/${file} \
                                     --TF_FORCE_GPU_ALLOW_GROWTH=true \
                                     --dataset=cifar100 \
                                     --resnet_size=110 \
@@ -94,7 +94,6 @@ func_train()
                                     --ps_hosts=${role_hosts[0]} \
                                     --worker_hosts=${role_hosts[1]} \
                                     --num_gpus=${#indexs[@]} "
-        
             echo $command
             echo ""
 

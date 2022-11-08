@@ -1,4 +1,5 @@
 import numpy as np
+
 # Part 1 - get from AWS websites
 instance_type=['p2.xlarge','g4dn.4xlarge','g3.8xlarge','g3.16xlarge','p2.8xlarge']
 instance_gpus=[1,1,2,4,8]
@@ -22,3 +23,11 @@ r1 = 876.5
 r2 = -0.2
 r3 = 2507.6
 r4 = 0.5
+
+# Part 3 - hp
+starttimestamp=0
+objtimestamp=0
+key = "your-keyfile"
+image_id = "your-AMI"
+subnet_id = "your-VPCsubset"
+SecurityGroupIds = "your-sgid"

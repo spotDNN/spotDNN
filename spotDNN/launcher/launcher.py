@@ -4,9 +4,9 @@ import subprocess
 import time
 from profiler import instanceinfo
 
-image_id = "your-AMI"
-subnet_id = "your-VPCsubset"
-SecurityGroupIds = "your-sgid"
+image_id = instanceinfo.image_id
+subnet_id = instanceinfo.subnet_id
+SecurityGroupIds = instanceinfo.SecurityGroupIds
 
 def getSpotInstance(instance_type, count):
     instance_id = ""
