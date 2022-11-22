@@ -6,7 +6,7 @@
 
 *spotDNN* comprises four pieces of modules: a parameter profiler, a training performance predictor, a spot instance provisioner and a revocation detector. Users first submit a DDNN training workload, the performance SLOs and the quotas to the *spot*DNN portal. When the parameter profiler finishes the profiling jobs, the performance predictor then predicts the DDNN training time using our performance model. To guarantee the target DDNN training time and training loss, the spot resource provisioner further identifies the cost-efficient resource provisioning plan using spot instances. Once the cost-efficient resource provisioning plan is determined, the instance launcher finally requests the corresponding instances in the plan using the command-line tools (e.g., AWS CLI) and places them in the same VPC. 
 
-![image-20221010114716550](/Users/ritashang/Documents/code/Github/spotDNN/images/prototype.png)
+![image-20221010114716550](images/prototype.png)
 
 ## Modeling DDNN Training Performance in Heterogeneus Environments
 
