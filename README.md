@@ -64,7 +64,7 @@ $$
 
 ## Getting Started
 
-#### Requirements
+### Requirements
 
 1. TensorFlow 1.15.0
 
@@ -72,15 +72,15 @@ $$
 
 3. Amazon AWS CLI
 
-#### Setting up AWS
+### Setting up AWS
 
 *SpotDNN* is integrated on Amazon AWS. To using *SpotDNN*, an AWS account is required. The following sections break down the steps to setup up the required AWS components.
 
-#####  Setting up the AWS Access Key
+####  Setting up the AWS Access Key
 
 First, setup an `AWS Access Key` for your AWS account. More details about setting up an access key can be found at [AWS Security Blog: Where's My Secret Access Key](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/). Please remember the values for the `AWS Access Key ID` and the `AWS Secret Access Key`. These values are needed to configure the Amazon AWS CLI.
 
-#####  Configure the Amazon AWS CLI
+####  Configure the Amazon AWS CLI
 
 1. Download and install the Amazon AWS CLI. More details can be found at [Installing or updating the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). 
 2. Configure Amazon AWS CLI by running command `aws configure`, if it is not yet configured.
@@ -90,7 +90,7 @@ First, setup an `AWS Access Key` for your AWS account. More details about settin
    - Default region name
    - Default output format
 
-##### Configure the Amazon VPC
+#### Configure the Amazon VPC
 
 1. Create a  VPC by specifying the IPv4 CIDR block and remember the value of the `VPC ID`.
 2. Create a  subnet by specifying the `VPC ID` and remember the values of the `Route table ID` and `Subnet Id` returned.
