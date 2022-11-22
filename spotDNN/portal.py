@@ -7,8 +7,9 @@ import run
 import time
 import datetime
 # performance profiler
-    # 1. launch a group of instances and then run a few iterations (launcher.py + run.sh)
+    # 1. launch a group of instances and then run a few iterations (launcher.py + run.py)
     # 2. get training logs including speed, loss, parameter size and so on listed in instanceinfo.py (profiler.py)
+
 # provisioner (include predictor)
 objloss = 0.8
 objtime = 2400

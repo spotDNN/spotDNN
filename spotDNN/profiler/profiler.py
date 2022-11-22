@@ -2,6 +2,9 @@ import os
 from statistics import mean
 import pandas as pd
 import numpy as np
+from launcher import launcher
+from profiler import instanceinfo
+import run
 
 def mergeAndSort(dirpath, metrics):
     fulldirpath = dirpath
@@ -96,3 +99,7 @@ def fitting_bandwidth(dirlist):
                 print(bandwidth)
     return bandwidth
     
+if __name__ == '__main__':
+    instance_type = instanceinfo.instance_type
+    instance_count = [1,1,1,0,0]
+    launcher.getSpotInstance(instance_type, instance_count) ###continue

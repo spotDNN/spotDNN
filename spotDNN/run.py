@@ -44,8 +44,8 @@ def run(file, targetimages):
                         --worker_hosts=%s \
                         --num_gpus=0 ''' %(file, targetimages, ps_host, worker_host)
 
-    command2 = '''ssh -i %s.pem ubuntu@%s %s''' %(key, hosts[0], command1)
-    subprocess.check_output(command2, shell=True).decode()
+    ps_command = '''ssh -i %s.pem ubuntu@%s %s''' %(key, hosts[0], command1)
+    subprocess.check_output(ps_command, shell=True).decode()
 
     worker_index = 0
     for host_index in range(1, len(hosts)):
@@ -66,6 +66,6 @@ def run(file, targetimages):
                                 targetimages, worker_index, ps_host, worker_host, \
                                 instance_gpus[int(instance_index[host_index])])
             worker_index += 1
-            command2 = '''ssh -i %s.pem ubuntu@%s %s''' %(key, hosts[host_index], command1)
-            subprocess.check_output(command2, shell=True).decode()
+            worker_command = '''ssh -i %s.pem ubuntu@%s %s''' %(key, hosts[host_index], command1)
+            subprocess.check_output(worker_command, shell=True).decode()
     

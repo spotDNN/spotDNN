@@ -6,7 +6,7 @@
 
 *spotDNN* comprises four pieces of modules: a parameter profiler, a training performance predictor, a spot instance provisioner and a revocation detector. Users first submit a DDNN training workload, the performance SLOs and the quotas to the *spot*DNN portal. When the parameter profiler finishes the profiling jobs, the performance predictor then predicts the DDNN training time using our performance model. To guarantee the target DDNN training time and training loss, the spot resource provisioner further identifies the cost-efficient resource provisioning plan using spot instances. Once the cost-efficient resource provisioning plan is determined, the instance launcher finally requests the corresponding instances in the plan using the command-line tools (e.g., AWS CLI) and places them in the same VPC. 
 
-![image-20221010114716550](/Users/ritashang/Documents/code/Github/spotDNN/images/prototype.png)
+![image-20221010114716550](images/prototype.png)
 
 ## Modeling DDNN Training Performance in Heterogeneus Environments
 
@@ -83,8 +83,8 @@ First, setup an `AWS Access Key` for your AWS account. More details about settin
 #####  Configure the Amazon AWS CLI
 
 1. Download and install the Amazon AWS CLI. More details can be found at [Installing or updating the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). 
-2. Configure Amazon AWS CLI by running command `aws configure`, if it is not yet configured.
-3. Enter the following:
+1. Configure Amazon AWS CLI by running command `aws configure`, if it is not yet configured.
+2. Enter the following:
    - `AWS Access Key ID`
    - `AWS Secret Access Key`
    - Default region name
@@ -95,7 +95,7 @@ First, setup an `AWS Access Key` for your AWS account. More details about settin
 1. Create a  VPC by specifying the IPv4 CIDR block and remember the value of the `VPC ID`.
 2. Create a  subnet by specifying the `VPC ID` and remember the values of the `Route table ID` and `Subnet Id` returned.
 3. Create a Internet gate and attached it to the VPC created before. Remember the value of the `Internet gateway ID`.
-4. Edit the route table. Enter `0.0.0.0/0` to the `Destination` and `Internet gateway ID` to the `Target`.
+3. Edit the route table. Enter `0.0.0.0/0` to the `Destination` and `Internet gateway ID` to the `Target`.
 
 ## Installation
 

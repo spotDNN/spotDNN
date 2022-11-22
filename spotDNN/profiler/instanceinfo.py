@@ -1,5 +1,8 @@
 import numpy as np
+
+# file path of model
 file = './cifar_resnet_tf1/resnet_ASP_img.py'
+
 # Part 1 - get from AWS websites
 instance_type=['p2.xlarge','g4dn.4xlarge','g3.8xlarge','g3.16xlarge','p2.8xlarge']
 instance_gpus=[1,1,2,4,8]
@@ -7,7 +10,13 @@ instance_quota = np.array([2, 5, 5, 8, 5])
 instance_spot_price = np.array([0.918, 0.3612, 0.6840, 1.5676, 2.1600])
 bps = 1200
 
-# Part 2 - profile using profiler
+# Part 2 - hp
+key = "your-keyfile"
+image_id = "your-AMI"
+subnet_id = "your-VPCsubset"
+SecurityGroupIds = "your-sgid"
+
+# Part 3 - profile using profiler
 instance_speed = np.array([1885, 750, 1018, 1995, 2115])
 instance_batch = np.array([1024, 1024, 1024, 1024, 1024])
 instance_time = instance_batch * instance_gpus / instance_speed
@@ -24,10 +33,5 @@ r2 = -0.2
 r3 = 2507.6
 r4 = 0.5
 
-# Part 3 - hp
 starttimestamp=0
 objtimestamp=0
-key = "your-keyfile"
-image_id = "your-AMI"
-subnet_id = "your-VPCsubset"
-SecurityGroupIds = "your-sgid"
