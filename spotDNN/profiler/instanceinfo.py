@@ -20,7 +20,7 @@ SecurityGroupIds = "your-sgid"
 
 # Part 3 - profile using profiler
 instance_speed = np.array([1885, 750, 1018, 1995, 2115])
-instance_batch = np.array([1024, 1024, 1024, 1024, 1024])
+instance_batch = np.array([1024, 1024, 512, 512, 1024])
 instance_time = instance_batch * instance_gpus / instance_speed
 
 param = 11.5

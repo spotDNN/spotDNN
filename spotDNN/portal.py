@@ -28,4 +28,4 @@ run.run(instanceinfo.file, int(targetimages))
 
 # detector
 detector_cmd = """sh detector.sh"""
-subprocess.check_output(detector_cmd, shell=True).decode()
+subprocess.run(detector_cmd, shell=True).decode()
