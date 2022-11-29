@@ -1,7 +1,9 @@
 import numpy as np
 
 # file path of model
-file = './cifar_resnet_tf1/resnet_ASP_img.py'
+modelfile = './cifar_resnet_tf1/resnet_ASP_img.py'
+datafile = './datastes/cifar-100-binary'
+logfile = './cifar_resnet_tf1/model_resnet_train'
 
 # Part 1 - get from AWS websites
 instance_type=['p2.xlarge','g4dn.4xlarge','g3.8xlarge','g3.16xlarge','p2.8xlarge']

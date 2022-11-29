@@ -14,6 +14,8 @@ import datetime
 objloss = 0.8
 objtime = 2400
 instance_count, targetimages = provisioner.searchclustser_spotdnn(objloss, objtime)
+# print(instance_count)
+# print(targetimages)
 
 # launcher
 instance_type = instanceinfo.instance_type
@@ -22,7 +24,7 @@ hosts = launcher.getSpotInstance(instance_type, instance_count)
 instanceinfo.starttimestamp = datetime.datetime.now()
 instanceinfo.objtimestamp = instanceinfo.starttimestamp + objtime
 
-run.run(instanceinfo.file, targetimages)
+run.run(instanceinfo.file, int(targetimages))
 
 # detector
 detector_cmd = """sh detector.sh"""

@@ -102,4 +102,5 @@ def fitting_bandwidth(dirlist):
 if __name__ == '__main__':
     instance_type = instanceinfo.instance_type
     instance_count = [1,1,1,0,0]
-    launcher.getSpotInstance(instance_type, instance_count) ###continue
+    launcher.getSpotInstance(instance_type, instance_count) 
+    ###continue
