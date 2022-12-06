@@ -101,19 +101,19 @@ First, setup an `AWS Access Key` for your AWS account. More details about settin
 
 1. Extend *spotDNN* to Google Cloud Platform
 
-   (1) Configure Google Cloud CLI.
+   - Configure Google Cloud CLI.
 
-   (2) Configure Google Cloud VPC.
+   - Configure Google Cloud VPC.
 
-   (3) Substitute `aws ec2` commands with `gcloud compute ` commands.
+   - Substitute `aws ec2` commands with `gcloud compute ` commands.
 
 2. Extend *spotDNN* to Azure
 
-   (1) Configure Azure CLI.
+   - Configure Azure CLI.
 
-   (2) Configure Azure Vnet.
+   - Configure Azure Vnet.
 
-   (3) Substitute `aws ec2` commands with `az vm` commands.
+   - Substitute `aws ec2` commands with `az vm` commands.
 
 ## Installation
 
