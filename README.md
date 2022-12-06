@@ -97,6 +97,24 @@ First, setup an `AWS Access Key` for your AWS account. More details about settin
 3. Create a Internet gate and attached it to the VPC created before. Remember the value of the `Internet gateway ID`.
 4. Edit the route table. Enter `0.0.0.0/0` to the `Destination` and `Internet gateway ID` to the `Target`.
 
+#### Ongoing Plan
+
+1. Extend *spotDNN* to Google Cloud Platform
+
+   (1) Configure Google Cloud CLI.
+
+   (2) Configure Google Cloud VPC.
+
+   (3) Substitute `aws ec2` commands with `gcloud compute ` commands.
+
+2. Extend *spotDNN* to Azure
+
+   (1) Configure Azure CLI.
+
+   (2) Configure Azure Vnet.
+
+   (3) Substitute `aws ec2` commands with `az vm` commands.
+
 ## Installation
 
 ```shell
@@ -127,4 +145,3 @@ $ pip install -r requirements.txt
    ```
 
 After you run the script, you will get the training cluster information  in `spotDNN/launcher/instancesInfo` which is a *.txt* file, and the training results in `spotDNN/launcher/result`, which contains files copied from different instances. 
-
