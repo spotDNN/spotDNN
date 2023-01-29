@@ -97,7 +97,7 @@ First, setup an `AWS Access Key` for your AWS account. More details about settin
 3. Create a Internet gate and attached it to the VPC created before. Remember the value of the `Internet gateway ID`.
 4. Edit the route table. Enter `0.0.0.0/0` to the `Destination` and `Internet gateway ID` to the `Target`.
 
-#### Working in Progress
+#### New Features
 
 1. Extend *spotDNN* to Google Cloud Platform
 
