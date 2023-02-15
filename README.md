@@ -10,7 +10,7 @@
 
 ## Modeling DDNN Training Performance in Heterogeneus Environments
 
-We characterize the DDNN training process in a heterogeneous cluster with $j$ normalized iterations and each iteration requires the normalized iteration time $T_{norm}$.  The normalized iteration time $T_{norm}$ can be considered as the expectation of the iteration time of heterogeneous workers, which is formulated as
+We characterize the DDNN training process in a heterogeneous cluster with $j$ normalized iterations and each iteration requires the expected iteration time $T_{exp}$.  The expected iteration time $T_{exp}$ can be formulated as the reciprocal of the number of iterations per unit time in a heterogeneous cluster, which is given as
 
 
 $$
@@ -95,7 +95,7 @@ First, setup an `AWS Access Key` for your AWS account. More details about settin
 3. Create a Internet gate and attached it to the VPC created before. Remember the value of the `Internet gateway ID`.
 4. Edit the route table. Enter `0.0.0.0/0` to the `Destination` and `Internet gateway ID` to the `Target`.
 
-#### New Features
+### New Features
 
 1. Extend *spotDNN* to Google Cloud Platform
 
