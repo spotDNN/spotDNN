@@ -10,6 +10,7 @@ instance_type=['p2.xlarge','g4dn.4xlarge','g3.8xlarge','g3.16xlarge','p2.8xlarge
 instance_gpus=[1,1,2,4,8]
 instance_quota = np.array([2, 5, 5, 8, 5])
 instance_spot_price = np.array([0.918, 0.3612, 0.6840, 1.5676, 2.1600])
+instance_exist = []
 bps = 1200
 
 # Part 2 - hp

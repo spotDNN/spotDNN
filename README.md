@@ -18,19 +18,17 @@ T_{norm}=\frac{1}{\sum_{i \in \mathcal{N}} \frac{1}{T^i}}
 $$
 
 
-DDNN training loss converges faster as the normalized batch size $b_{norm}$ gets larger, and the convergence rate slows down as more workers $|\mathcal{N}|$are provisioned. Moreover, DDNN training loss is inversely proportional to the normalized iterations $j$. Accordingly, we empirically model the training loss in a heterogeneous cluster as
+DDNN training loss converges faster as the WA batch size $b_{w}$ gets larger and the CC $R$ gets smaller. The convergence rate slows down as more workers are provisioned. Moreover, DDNN training loss is inversely proportional to the normalized iterations $j$. Accordingly, we empirically model the training loss in a heterogeneous cluster as
 
 
 $$
-f_{loss}\left(b_{norm }, \mathcal{N}, j\right)=\frac{\left(\gamma_2 \cdot b_{n o r m}+\gamma_3\right) \sqrt{|\mathcal{N}|}}{j+\gamma_1}+\gamma_4
+{f}_{loss}\left(b_{w}, R, \mathcal{N}, j\right) = \frac{\left(\gamma_2 \! \cdot \! b_{w} \! + \! \gamma_3\right) \sqrt{\left(R \! + \! \gamma_4\right) |\mathcal{N}|}}{j+\gamma_1} + \gamma_5
 $$
 
-
-We proceed to model the normalized batch size $b_{norm}$, which can be defined as the amount of data trained in a cluster per unit time divided by the total number of cluster iterations per unit time. The amount of data trained per unit time in a cluster can be represented as the cluster training speed (i.e., $v$), and the total number of cluster iterations per unit time can be identified as the sum of the iterations per worker per unit time. Accordingly, we formulate the normalized batch size $b_{norm}$ as
-
+In a heterogeneous cluster, $b_{w}$ is calculated as the ratio of trained data samples per unit time to iterations trained per unit time.  In particular, the amount of data samples trained per unit time is considered as the cluster training speed (i.e., $v$). The number of iterations trained per unit time can be identified as the *reciprocal* of the expected iteration time (i.e., $T_exp$). Accordingly, we formulate the WA batch size bw as
 
 $$
-b_{norm}=v \cdot T_{norm}
+b_{w} = \frac{v}{\frac{1}{T_{exp}}} = v \cdot T_{exp}
 $$
 
 
@@ -55,10 +53,10 @@ The objective is to minimize the monetary cost of provisioned spot instances, wh
 
 $$
 \begin{array}{ll}
-\min _{\mathcal{N}} & C=T \cdot \sum_{k \in m} n_k \cdot p_k \\
-\text { s.t. } & f_{loss}\left(b_{norm}, \mathcal{N}, j\right)=L_{o b j}, \\
+\min _{\mathcal{N}} & C=T \cdot \sum_{m \in \mathcal{M}} n_m \cdot p_m \\
+\text { s.t. } & {f}_{loss}\left(b_{w}, R, \mathcal{N}, j\right)=L_{obj}, \\
 & T \leq T_{obj}, \\
-& n_k \leq Lim_{k}, \quad \forall k \in m, n_k \in \mathcal{Z}
+& n_m \leq  Lim _m, \quad \forall m \in \mathcal{M}, n_m \in \mathcal{Z}
 \end{array}
 $$
 
