@@ -46,7 +46,7 @@ def run(modelfile, datafile, logfile, targetimages):
                         --train_dir=%s \
                         --num_gpus=0 ''' %(modelfile, targetimages, ps_host, worker_host, datafile, logfile)
 
-    ps_command = '''sleep 15 && ssh -o StrictHostKeyChecking=no -i %s.pem ubuntu@%s %s''' %(key, hosts[0], command1)
+    ps_command = '''sleep 15 && ssh -o StrictHostKeyChecking=no -i %s.pem ubuntu@%s %s &''' %(key, hosts[0], command1)
     subprocess.run(ps_command, shell=True).decode()
 
     worker_index = 0
@@ -71,6 +71,6 @@ def run(modelfile, datafile, logfile, targetimages):
                                 instance_gpus[int(instance_index[host_index])],\
                                 datafile, logfile,)
             worker_index += 1
-            worker_command = '''sleep 15 && ssh -o StrictHostKeyChecking=no -i %s.pem ubuntu@%s %s''' %(key, hosts[host_index], command1)
+            worker_command = '''sleep 15 && ssh -o StrictHostKeyChecking=no -i %s.pem ubuntu@%s %s &''' %(key, hosts[host_index], command1)
             subprocess.run(worker_command, shell=True).decode()
     
