@@ -22,7 +22,7 @@ DDNN training loss converges faster as the WA batch size $b_{w}$ gets larger and
 
 
 $$
-{f}_{loss}\left(b_{w}, R, \mathcal{N}, j\right) = \frac{\left(\gamma_2 \! \cdot \! b_{w} \! + \! \gamma_3\right) \sqrt{\left(R \! + \! \gamma_4\right) |\mathcal{N}|}}{j+\gamma_1} + \gamma_5
+{f}_{loss}\left(b_{w}, R, \mathcal{N}, j\right) = \frac{\left(\gamma_2  \cdot  b_{w}  +  \gamma_3\right) \sqrt{\left(R  +  \gamma_4\right) |\mathcal{N}|}}{j+\gamma_1} + \gamma_5
 $$
 
 In a heterogeneous cluster, $b_{w}$ is calculated as the ratio of trained data samples per unit time to iterations trained per unit time.  In particular, the amount of data samples trained per unit time is considered as the cluster training speed (i.e., $v$). The number of iterations trained per unit time can be identified as the *reciprocal* of the expected iteration time (i.e., $T_{exp}$). Accordingly, we formulate the WA batch size bw as
