@@ -24,7 +24,7 @@ hosts = launcher.getSpotInstance(instance_type, instance_count)
 instanceinfo.starttimestamp = datetime.datetime.now()
 instanceinfo.objtimestamp = instanceinfo.starttimestamp + objtime
 
-run.run(instanceinfo.file, int(targetimages))
+run.run(instanceinfo.modelfile, instanceinfo.datafile, instanceinfo.logfile, int(targetimages))
 
 # detector
 detector_cmd = """sh detector.sh"""
